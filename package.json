@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/KareemAbo3id/webic"
+    "url": "https://github.com/KareemAbo3id/create-webic-app"
   },
   "bugs": {
-    "url": "https://github.com/KareemAbo3id/webic/issues"
+    "url": "https://github.com/KareemAbo3id/create-webic-app/issues"
   },
-  "homepage": "https://github.com/KareemAbo3id/webic#readme",
+  "homepage": "https://github.com/KareemAbo3id/create-webic-app#readme",
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "chalk": "^5.0.1",
