@@ -131,7 +131,17 @@ inquirer.prompt(QUESTIONS).then(answers => {
   fs.writeFileSync(webicManifest, JSON.stringify(manifestJSON, null, 2), 'utf8');
   fs.writeFileSync(webicReadme, readme, 'utf8');
 
-  // 5. install dependencies:
+  // 5. initalize git repo:
+  console.log();
+  const initializedGit = run(COMMANDS.initGit);
+  const gitConfig = run(COMMANDS.gitcrlfFalse);
+  if ((!initializedGit, !gitConfig)) {
+    console.error(chalk.red('\n! ' + chalk.bold('Failed to initialize git repo.')));
+    process.exit(-1);
+  }
+  console.log(chalk.green('Success!') + ' Git Initialized, branch name: ' + chalk.cyan('(master)'));
+
+  // 6. install dependencies:
   console.log();
   console.log('Installing packages. This might take a couple of minutes...');
   const installedDeps = run(COMMANDS.installDeps);
@@ -141,16 +151,6 @@ inquirer.prompt(QUESTIONS).then(answers => {
   }
   console.log();
   console.log(chalk.green('Success!') + ' All packages installed.');
-
-  // 6. initalize git repo:
-  console.log();
-  const initializedGit = run(COMMANDS.initGit);
-  const gitConfig = run(COMMANDS.gitcrlfFalse);
-  if (!initializedGit, !gitConfig) {
-    console.error(chalk.red('\n! ' + chalk.bold('Failed to initialize git repo.')));
-    process.exit(-1);
-  }
-  console.log(chalk.green('Success!') + ' Git Initialized, branch name: ' + chalk.cyan('(master)'));
 
   // 7. log instructions message:
   console.log();
@@ -188,14 +188,15 @@ inquirer.prompt(QUESTIONS).then(answers => {
 // init the app:
 function initApp(webicApp, newApp) {
   const filesToCreate = fs.readdirSync(webicApp);
+  // create .gitignore file:
+  const gitignoreContent = 'node_modules/\nbuild\ndev/';
+  fs.writeFileSync(`${CURR_DIR}/${newApp}/.gitignore`, gitignoreContent, 'utf8');
   filesToCreate.forEach(file => {
     const orginalFilePath = `${webicApp}/${file}`;
     const orginalFileStats = fs.statSync(orginalFilePath);
     // if it's a file, read it, and write it back to the new dir:
     if (orginalFileStats.isFile()) {
       const orginalFileContents = fs.readFileSync(orginalFilePath, 'utf8');
-      // Rename .gitignore file:
-      if (file === '.npmignore') file = '.gitignore' || file;
       // write the new file in the new dir:
       const newFilePath = `${CURR_DIR}/${newApp}/${file}`;
       // get the new file contents:

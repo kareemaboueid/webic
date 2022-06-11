@@ -1,7 +1,7 @@
 {
   "name": "webic-app",
   "description": "Create your web app blazingly fast with most lightweight, well organized, and full configurable boilerplate template for building web apps.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "type": "module",
   "author": "Karim Aboueid",
