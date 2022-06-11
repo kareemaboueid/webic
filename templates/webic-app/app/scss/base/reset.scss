@@ -1,0 +1,54 @@
+// ==============================================
+// Custom reset styles
+// ==============================================
+
+@use '../abstracts/' as *;
+
+// Font Import
+// @import url(path/to/font/cdn/link);
+// $font-family-base: imported font family;
+
+// html
+html {
+  font-size: 100%;
+}
+// ==============================================
+
+// body
+body {
+  font-family: $f-family-base;
+  background: $white;
+  color: $black;
+  line-height: $line-height-base;
+  text-rendering: optimizeLegibility;
+  -webkit-text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+// ==============================================
+
+// Custom selection styles
+
+// ::selection {
+// color: #fff;
+//   background-color: ;
+// }
+// ==============================================
+
+// Custom scrollbar styles
+
+// ::-webkit-scrollbar {
+// width: 13px;
+// min-height: 100vh;
+// }
+// ::-webkit-scrollbar-thumb {
+// background: #c2c2c2;
+// border-radius: rem(100);
+// }
+// ::-webkit-scrollbar-thumb:hover {
+// background: #b1b2b5;
+// }
+// ::-webkit-scrollbar-track {
+// background: #fff;
+// border-radius: rem(100);
+// }
+// ==============================================

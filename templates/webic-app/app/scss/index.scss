@@ -1,0 +1,44 @@
+/// ==============================================
+/// Webic scss partials.
+/// Everything is crucially organized.
+///
+/// @author Kareem Aboeid
+///
+/// /* Rules */
+///     # In main.scss files load by @use keyword with folders.
+///     # In each _index.scss files load by @forward keyword with files.
+///     # In any [file].scss files and folders load by @use 'file' as *.
+///     # Files/folder should be loaded In order of usebilty and readability rules.
+///     # If needed, sort scss folders by using (a, b, c), not numbers.
+///
+/// /* Structure */
+///
+/// abstract/
+///     # don't @use it in main.scss.
+///     # will be usable globally among scss files.
+///     # contains uncompilable style: breakpoints, functions, mixins, variables.
+///
+/// base/
+///     # contains initail style: selection, scrollbar.
+///     # should sort that way to render everything in order:
+///        1-boilerplate.
+///        2-reset.
+///        3-typograpghy.
+///
+/// components/
+///     # contains styled UI components: cards, buttons.
+///
+/// layout/
+///     # contains styled page parts: header, aside, footer.
+///
+/// utilities/
+///     # contains awesome utilities: grid, containers...
+///
+/// main.scss
+///     # import all scss partials by @use keyword.
+/// ==============================================
+
+@use 'base';
+@use 'utilities';
+@use 'components';
+@use 'layout';

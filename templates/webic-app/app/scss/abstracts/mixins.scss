@@ -1,0 +1,58 @@
+// ==============================================
+// Mixins - for global use among scss files
+// feel free to modify or add new mixins.
+// ==============================================
+
+// flexbox display
+@mixin display-flex(
+  $direction: row,
+  $flex-wrap: nowrap,
+  $justify-content: normal,
+  $align-items: normal,
+  $gap: 0
+) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $flex-wrap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+}
+
+// Absolute Positioned
+@mixin position(
+  $position: relative,
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Centering Mixins using apsolute positioning
+@mixin center-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin center-y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@mixin center-xy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// border:
+@mixin border($width: 1px, $style: solid, $color: $black) {
+  border: $width $style $color;
+}

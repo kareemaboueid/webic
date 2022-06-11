@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="" dir="">
+  <head>
+    <!-- primary tags -->
+    <meta charset="UTF-8" />
+    <title>Webic App</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- app favicons -->
+    <link rel="icon" href="media/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="media/icon.png" />
+
+    <!-- PWA -->
+    <!--
+      manifest.json provides metadata used when your web app is installed on a user's mobile device or desktop.
+      See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#5c6bc0" />
+
+    <!-- app info -->
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="language" content="" />
+
+    <!-- app og tags -->
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+
+    <!--
+      app font icons:
+      webic uses Bootstrap Icons
+      link: https://icons.getbootstrap.com/#icons
+      feel free to use any icon library you like
+    -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+
+    <!--
+      IMPORTANT:
+      The following tags are pre-set due to compilation and build process, please DO NOT change/delete them.
+     -->
+    <link rel="stylesheet" href="css/main.bundled.css" />
+    <script defer src="js/main.bundled.js"></script>
+  </head>
+
+  <body>
+    <!-- All the structure of your app goes directly in `#app` div. -->
+    <main id="app">
+      <!-- start Intro -->
+      <div class="container">
+        <div class="row flex justify-center items-center">
+          <div class="col-12 flex f-column justify-center items-center p-2rem">
+            <p class="uppercase f-sec-500 p-b-0-5rem t-center">Welcome to</p>
+            <img src="media/logo.png" alt="Webic App Logo" width="115" />
+          </div>
+          <div class="col-8 card-alt t-center p-2rem">
+            <h1 class="f-sec-800 uppercase">Hello, world!</h1>
+            <p class="f-sec-700 p-t-1rem f-size-3">
+              Get started by editing in <code>app/</code> directory.
+            </p>
+            <!-- Features -->
+            <div
+              class="row flex justify-center items-baseline gap-1rem t-left p-t-3rem"
+            >
+              <div
+                class="col-5 flex f-column justify-center items-start gap-0-25rem"
+              >
+                <p
+                  class="f-size-3 flex justify-center items-center gap-0-25rem"
+                >
+                  <i class="icon-dark bi bi-cpu"></i>
+                  <span class="f-w-500 f-sec-800 p-l-0-25rem">Robust base</span>
+                </p>
+                <p class="f-sec-600 f-size-3">
+                  Built on top of most crucially organized SASS partials, to
+                  ensure all basic styles are set, clean, scalable and easily
+                  maintainable.
+                </p>
+              </div>
+
+              <div
+                class="col-5 flex f-column justify-center items-start gap-0-25rem"
+              >
+                <p
+                  class="f-size-3 flex justify-center items-center gap-0-25rem"
+                >
+                  <i class="icon-dark bi bi-braces-asterisk"></i>
+                  <span class="f-w-500 f-sec-800 p-l-0-25rem"
+                    >Modules based</span
+                  >
+                </p>
+                <p class="f-sec-600 f-size-3">
+                  Require any module you want, the
+                  <code>index.js</code> file will be bundling up and works in
+                  the browser perfectly.
+                </p>
+              </div>
+            </div>
+            <!-- Features -->
+            <div
+              class="row flex justify-center items-baseline gap-1rem p-t-2rem t-left"
+            >
+              <div
+                class="col-5 flex f-column justify-center items-start gap-0-25rem"
+              >
+                <p
+                  class="f-size-3 flex justify-center items-center gap-0-25rem"
+                >
+                  <i class="icon-dark bi bi-sliders"></i>
+                  <span class="f-w-500 f-sec-800 p-l-0-25rem">
+                    Automated Workflow
+                  </span>
+                </p>
+                <p class="f-sec-600 f-size-3">
+                  Includes <code>gulpfile</code> configurations to initialize a
+                  development environment that automates your workflow,
+                  debugging, starting a local server.
+                </p>
+              </div>
+
+              <div
+                class="col-5 flex f-column justify-center items-start gap-0-25rem"
+              >
+                <p
+                  class="f-size-3 flex justify-center items-center gap-0-25rem"
+                >
+                  <i class="icon-dark bi bi-terminal"></i>
+                  <span class="f-w-500 f-sec-800 p-l-0-25rem"
+                    >Environment Scripts</span
+                  >
+                </p>
+                <p class="f-sec-600 f-size-3">
+                  Start your app right away, with series of npm scripts that can
+                  perform all tasks in a single action, easily and quickly.
+                </p>
+              </div>
+            </div>
+            <br />
+          </div>
+        </div>
+      </div>
+      <div class="t-center p-1rem">
+        <p class="f-sec-700 p-b-0-5rem f-size-2">
+          built by
+          <a href="https://github.com/KareemAbo3id" class="f-prim-900">
+            KareemAbo3id</a
+          >
+          | Code licensed
+          <a href="#" class="f-prim-900"> MIT</a>
+        </p>
+      </div>
+      <!-- end Intro -->
+    </main>
+  </body>
+</html>

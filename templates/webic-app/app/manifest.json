@@ -1,0 +1,21 @@
+{
+  "name": "foo-app",
+  "description": "my awesome app",
+  "icons": [
+    {
+      "src": "media/logo.png",
+      "type": "image/png",
+      "sizes": "196x196",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "display_override": [
+    "window-control-overlay",
+    "minimal-ui"
+  ],
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#5c6bc0"
+}

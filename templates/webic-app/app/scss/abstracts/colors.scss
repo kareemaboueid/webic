@@ -1,0 +1,66 @@
+/// ==============================================
+/// Colors - for global use among scss files
+///
+/// Material Design colors
+/// link: https://www.materialpalette.com/colors
+///
+/// also you can use this extension for Material color snippets:
+/// https://marketplace.visualstudio.com/items?itemName=NabeelValley.material-colors
+///
+/// feel free to use your own color palette
+/// ==============================================
+
+// Primary Colors:
+$prim-color-50: hsl(204, 15%, 94%);
+$prim-color-100: hsl(207, 89%, 86%);
+$prim-color-200: hsl(207, 90%, 77%);
+$prim-color-300: hsl(207, 89%, 68%);
+$prim-color-400: hsl(207, 90%, 61%);
+$prim-color-500: hsl(207, 90%, 54%);
+$prim-color-600: hsl(208, 79%, 51%);
+$prim-color-700: hsl(210, 79%, 46%);
+$prim-color-800: hsl(212, 80%, 42%);
+$prim-color-900: hsl(216, 85%, 34%);
+
+// Secondary Colors:
+$sec-color-50: hsl(0, 0%, 98%);
+$sec-color-100: hsl(0, 0%, 96%);
+$sec-color-200: hsl(0, 0%, 93%);
+$sec-color-300: hsl(0, 0%, 88%);
+$sec-color-400: hsl(0, 0%, 74%);
+$sec-color-500: hsl(0, 0%, 62%);
+$sec-color-600: hsl(0, 0%, 46%);
+$sec-color-700: hsl(0, 0%, 38%);
+$sec-color-800: hsl(0, 0%, 26%);
+$sec-color-900: hsl(0, 0%, 13%);
+
+// Other Colors
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 10%);
+
+// Material primary colors:
+$red: hsl(4, 90%, 58%);
+$pink: hsl(340, 82%, 52%);
+$purple: hsl(291, 64%, 42%);
+$deep-purple: hsl(262, 52%, 47%);
+$indigo: hsl(231, 48%, 48%);
+$blue: hsl(207, 90%, 54%);
+$light-blue: hsl(199, 98%, 48%);
+$cyan: hsl(187, 100%, 42%);
+$teal: hsl(174, 100%, 29%);
+$green: hsl(122, 39%, 49%);
+$light-green: hsl(88, 50%, 53%);
+$lime: hsl(66, 70%, 54%);
+$yellow: hsl(54, 100%, 62%);
+$amber: hsl(45, 100%, 51%);
+$orange: hsl(36, 100%, 50%);
+$deep-orange: hsl(14, 100%, 57%);
+$brown: hsl(16, 25%, 38%);
+$grey: hsl(0, 0%, 62%);
+$blue-grey: hsl(200, 18%, 46%);
+
+// boxes background color:
+$error: $red;
+$warning: $amber;
+$success: $teal;
+$info: $light-blue;

@@ -1,0 +1,20 @@
+// ==============================================
+// component: cards
+// ==============================================
+
+@use '../abstracts/' as *;
+
+// material card styles:
+.card {
+  background-color: $white;
+  border-radius: $border-radius-base;
+  padding: $p-1rem;
+  box-shadow: $box-shadow-base;
+}
+
+.card-alt {
+  background-color: $white;
+  border-radius: $border-radius-base;
+  padding: $p-1rem;
+  box-shadow: $box-shadow-alt;
+}

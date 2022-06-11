@@ -1,0 +1,28 @@
+// ==============================================
+// Functions - for global use among scss files
+// feel free to modify or add new functions.
+// ==============================================
+
+@use "sass:math";
+
+// Transform px to rem
+// Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
+@function rem($pixels, $context: 16) {
+  @return (math.div($pixels, $context)) * 1rem;
+}
+
+// lighten & darken a color
+@function lighten($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+@function darken($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// black & white opacity
+@function black($opacity) {
+  @return rgba(0, 0, 0, $opacity);
+}
+@function white($opacity) {
+  @return rgba(255, 255, 255, $opacity);
+}

@@ -1,0 +1,21 @@
+// ==============================================
+// component: cards
+// ==============================================
+
+@use '../abstracts/' as *;
+
+.icon-dark {
+  @include display-flex(row, wrap, center, center, 0);
+  color: $prim-color-600;
+  background-color: $prim-color-50;
+  padding: 0.3rem;
+  border-radius: $border-radius-base;
+}
+
+.icon-light {
+  @include display-flex(row, wrap, center, center, 0);
+  color: $white;
+  background-color: $prim-color-400;
+  padding: 0.3rem;
+  border-radius: $border-radius-base;
+}

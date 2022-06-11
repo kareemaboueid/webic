@@ -1,0 +1,64 @@
+/// ==============================================
+/// Fonts - for global use among scss files
+///
+/// systems UI fonts for better performances.
+/// it draw clearer lines between the content and user interface with zero latency.
+///
+/// 1. refer to default system’s UI fonts groups:
+///   * (-apple-system) targets "San Francisco" font in Safari on Mac OS X and iOS,
+///       and "Helvetica Neue" on older versions.
+///   * "BlinkMacSystemFont" is the equivalent for Chrome on Mac OS X.
+///
+/// 2. known system UI fonts:
+///   * "Segoe UI" targets Windows and Windows Phone.
+///   * "Roboto" targets Android and newer Chrome OS.
+///   * "Oxygen" targets KDE.
+///   * "Ubuntu" targets UbuntuOS.
+///   * "Cantarell" targets GNOME.
+///   * "Fira Sans" targets Firefox OS.
+///   * "Droid Sans" targets older versions of Android.
+///
+/// 3. fallback fonts:
+///   * "Helvetica Neue" targets pre-El Capitan versions of Mac OS X.
+///   * sans-serif is the default sans-serif fallback font.
+/// ==============================================
+
+// sans-serif font face:
+$f-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+
+// monospace font face:
+$f-family-monospace: 'SFMono-Regular', Menlo, Monaco, Consolas,
+  'Liberation Mono', 'Courier New', monospace;
+
+// font-size variables:
+$f-size-base: 10px;
+$f-size-h1: 3.1rem;
+$f-size-h2: 2.5rem;
+$f-size-h3: 2.1rem;
+$f-size-h4: 1.7rem;
+$f-size-h5: 1.5rem;
+$f-size-h6: 1.3rem;
+
+// font-weight variables
+$f-weight-100: 100;
+$f-weight-200: 200;
+$f-weight-300: 300;
+$f-weight-400: 400;
+$f-weight-500: 500;
+$f-weight-600: 600;
+$f-weight-700: 700;
+$f-weight-800: 800;
+$f-weight-900: 900;
+
+// letter-spacing variables
+$letter-spacing-sm: -1px;
+$letter-spacing-md: 1px;
+$letter-spacing-lg: 2px;
+
+// line-height variables
+$line-height-base: 1.15;
+$line-height-sm: 1;
+$line-height-md: 1.3;
+$line-height-lg: 1.5;

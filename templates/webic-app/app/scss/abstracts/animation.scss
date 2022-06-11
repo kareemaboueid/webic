@@ -1,0 +1,24 @@
+// ==============================================
+// animation - for global use among scss files
+// feel free to modify or add new functions.
+// ==============================================
+
+// infinite rotate to right
+@keyframes infiniteRotateToRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// infinite rotate to left
+@keyframes infiniteRotateToLeft {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

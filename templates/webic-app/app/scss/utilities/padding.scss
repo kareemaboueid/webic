@@ -1,0 +1,136 @@
+// ==============================================
+// Utilities: padding
+// ==============================================
+
+@use "../abstracts/" as *;
+
+// Main Padding
+.p-0 {
+  padding: $p-0;
+}
+.p-0-25rem {
+  padding: $p-0-25rem;
+}
+.p-0-5rem {
+  padding: $p-0-5rem;
+}
+.p-1rem {
+  padding: $p-1rem;
+}
+.p-1-5rem {
+  padding: $p-1-5rem;
+}
+.p-2rem {
+  padding: $p-2rem;
+}
+.p-3rem {
+  padding: $p-3rem;
+}
+.p-4rem {
+  padding: $p-4rem;
+}
+.p-5rem {
+  padding: $p-5rem;
+}
+
+// Vertical Padding
+.p-t-0-25rem {
+  padding-top: $p-0-25rem;
+}
+.p-t-0-5rem {
+  padding-top: $p-0-5rem;
+}
+.p-t-1rem {
+  padding-top: $p-1rem;
+}
+.p-t-1-5rem {
+  padding-top: $p-1-5rem;
+}
+.p-t-2rem {
+  padding-top: $p-2rem;
+}
+.p-t-3rem {
+  padding-top: $p-3rem;
+}
+.p-t-4rem {
+  padding-top: $p-4rem;
+}
+.p-t-5rem {
+  padding-top: $p-5rem;
+}
+
+.p-b-0-25rem {
+  padding-bottom: $p-0-25rem;
+}
+.p-b-0-5rem {
+  padding-bottom: $p-0-5rem;
+}
+.p-b-1rem {
+  padding-bottom: $p-1rem;
+}
+.p-b-1-5rem {
+  padding-bottom: $p-1-5rem;
+}
+.p-b-2rem {
+  padding-bottom: $p-2rem;
+}
+.p-b-3rem {
+  padding-bottom: $p-3rem;
+}
+.p-b-4rem {
+  padding-bottom: $p-4rem;
+}
+.p-b-5rem {
+  padding-bottom: $p-5rem;
+}
+
+// Horizontal Padding
+.p-l-0-25rem {
+  padding-left: $p-0-25rem;
+}
+.p-l-0-5rem {
+  padding-left: $p-0-5rem;
+}
+.p-l-1rem {
+  padding-left: $p-1rem;
+}
+.p-l-1-5rem {
+  padding-left: $p-1-5rem;
+}
+.p-l-2rem {
+  padding-left: $p-2rem;
+}
+.p-l-3rem {
+  padding-left: $p-3rem;
+}
+.p-l-4rem {
+  padding-left: $p-4rem;
+}
+.p-l-5rem {
+  padding-left: $p-5rem;
+}
+
+.p-r-0-25rem {
+  padding-right: $p-0-25rem;
+}
+.p-r-0-5rem {
+  padding-right: $p-0-5rem;
+}
+.p-r-1rem {
+  padding-right: $p-1rem;
+}
+.p-r-1-5rem {
+  padding-right: $p-1-5rem;
+}
+.p-r-2rem {
+  padding-right: $p-2rem;
+}
+.p-r-3rem {
+  padding-right: $p-3rem;
+}
+.p-r-4rem {
+  padding-right: $p-4rem;
+}
+.p-r-5rem {
+  padding-right: $p-5rem;
+}

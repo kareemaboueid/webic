@@ -1,0 +1,69 @@
+// ==============================================
+// Utilities: background
+// ==============================================
+
+@use '../abstracts/' as *;
+
+// sec background colors:
+.sec-bg-50 {
+  background-color: $sec-color-50;
+}
+.sec-bg-100 {
+  background-color: $sec-color-100;
+}
+.sec-bg-200 {
+  background-color: $sec-color-200;
+}
+.sec-bg-300 {
+  background-color: $sec-color-300;
+}
+.sec-bg-400 {
+  background-color: $sec-color-400;
+}
+.sec-bg-500 {
+  background-color: $sec-color-500;
+}
+.sec-bg-600 {
+  background-color: $sec-color-600;
+}
+.sec-bg-700 {
+  background-color: $sec-color-700;
+}
+.sec-bg-800 {
+  background-color: $sec-color-800;
+}
+.sec-bg-900 {
+  background-color: $sec-color-900;
+}
+
+// prim background colors:
+.prim-bg-50 {
+  background-color: $prim-color-50;
+}
+.prim-bg-100 {
+  background-color: $prim-color-100;
+}
+.prim-bg-200 {
+  background-color: $prim-color-200;
+}
+.prim-bg-300 {
+  background-color: $prim-color-300;
+}
+.prim-bg-400 {
+  background-color: $prim-color-400;
+}
+.prim-bg-500 {
+  background-color: $prim-color-500;
+}
+.prim-bg-600 {
+  background-color: $prim-color-600;
+}
+.prim-bg-700 {
+  background-color: $prim-color-700;
+}
+.prim-bg-800 {
+  background-color: $prim-color-800;
+}
+.prim-bg-900 {
+  background-color: $prim-color-900;
+}

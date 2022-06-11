@@ -1,0 +1,24 @@
+// ==============================================
+// Visuals - for global use among scss files
+// ==============================================
+
+// Border Variables
+$border-radius-base: 0.24rem;
+$border-radius-sm: $border-radius-base * 0.5;
+$border-radius-lg: $border-radius-base * 1.5;
+$border-radius-round: 500rem;
+
+// Transition Variables
+$transition-base: all 250ms cubic-bezier((0.4, 0, 0.2, 1));
+$transition-fast: all 100ms cubic-bezier((0.4, 0, 0.2, 1));
+$transition-slow: all 500ms cubic-bezier((0.4, 0, 0.2, 1));
+
+// Box Shadow Variables
+$box-shadow-base: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+  rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+$box-shadow-alt: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+  rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+$box-shadow-inset: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+  rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;

@@ -1,0 +1,108 @@
+// ==============================================
+// Utilities: Flex Helper
+// ==============================================
+
+// display flex
+.flex {
+  display: flex;
+}
+
+// flex wrap
+.wrap {
+  flex-wrap: wrap;
+}
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+// justify content
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-space-around {
+  justify-content: space-around;
+}
+.justify-space-between {
+  justify-content: space-between;
+}
+.justify-space-evenly {
+  justify-content: space-evenly;
+}
+.justify-stretch {
+  justify-content: stretch;
+}
+.justify-baseline {
+  justify-content: baseline;
+}
+
+// align items
+.items-start {
+  align-items: flex-start;
+}
+.items-center {
+  align-items: center;
+}
+.items-end {
+  align-items: flex-end;
+}
+.items-space-around {
+  align-items: space-around;
+}
+.items-space-between {
+  align-items: space-between;
+}
+.items-space-evenly {
+  align-items: space-evenly;
+}
+.items-stretch {
+  align-items: stretch;
+}
+.items-baseline {
+  align-items: baseline;
+}
+
+// flex direction
+.f-row {
+  flex-direction: row;
+}
+.f-row-reverse {
+  flex-direction: row-reverse;
+}
+.f-column {
+  flex-direction: column;
+}
+.f-column-reverse {
+  flex-direction: column-reverse;
+}
+
+// gap
+.gap-0-25rem {
+  gap: 0.25rem;
+}
+.gap-0-5rem {
+  gap: 0.5rem;
+}
+.gap-1rem {
+  gap: 1rem;
+}
+.gap-1-5rem {
+  gap: 1.5rem;
+}
+.gap-2rem {
+  gap: 2rem;
+}
+.gap-3rem {
+  gap: 3rem;
+}
+.gap-4rem {
+  gap: 4rem;
+}
+.gap-5rem {
+  gap: 5rem;
+}

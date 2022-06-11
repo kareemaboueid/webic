@@ -1,0 +1,159 @@
+// ==============================================
+// Utilities: typography
+// ==============================================
+
+@use '../abstracts/' as *;
+
+// Main Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $f-family-base;
+  margin: 0.5rem 0;
+}
+.h1,
+h1 {
+  font-size: $f-size-h1;
+  line-height: 38px;
+}
+.h2,
+h2 {
+  font-size: $f-size-h2;
+  line-height: 32px;
+}
+.h3,
+h3 {
+  font-size: $f-size-h3;
+  line-height: 28px;
+}
+.h4,
+h4 {
+  font-size: $f-size-h4;
+  line-height: 24px;
+}
+.h5,
+h5 {
+  font-size: $f-size-h5;
+  line-height: 22px;
+}
+.h6,
+h6 {
+  font-size: $f-size-h6;
+  line-height: 20px;
+}
+
+// no select
+.no-select {
+  user-select: none;
+  cursor: default;
+}
+
+// code blocks
+.code-light {
+  background-color: $sec-color-200;
+  padding: $p-0-25rem;
+  border-radius: $border-radius-base;
+  line-height: normal;
+}
+.code-dark {
+  background-color: $sec-color-800;
+  padding: $p-0-25rem;
+  border-radius: $border-radius-base;
+  line-height: normal;
+}
+
+// font family
+.f-family-base {
+  font-family: $f-family-base;
+}
+.f-family-mono {
+  font-family: $f-family-monospace;
+}
+
+// font size:
+.f-size-base {
+  font-size: $f-size-base;
+}
+.f-size-1 {
+  font-size: calc($f-size-base + 0.1rem);
+}
+.f-size-2 {
+  font-size: calc($f-size-base + 0.2rem);
+}
+.f-size-3 {
+  font-size: calc($f-size-base + 0.3rem);
+}
+.f-size-4 {
+  font-size: calc($f-size-base + 0.4rem);
+}
+.f-size-5 {
+  font-size: calc($f-size-base + 0.5rem);
+}
+.f-size-6 {
+  font-size: calc($f-size-base + 0.6rem);
+}
+
+// font weight
+.f-w-100 {
+  font-weight: $f-weight-100;
+}
+.f-w-200 {
+  font-weight: $f-weight-200;
+}
+.f-w-300 {
+  font-weight: $f-weight-300;
+}
+.f-w-400 {
+  font-weight: $f-weight-400;
+}
+.f-w-500 {
+  font-weight: $f-weight-500;
+}
+.f-w-600 {
+  font-weight: $f-weight-600;
+}
+.f-w-700 {
+  font-weight: $f-weight-700;
+}
+.f-w-800 {
+  font-weight: $f-weight-800;
+}
+.f-w-900 {
+  font-weight: $f-weight-900;
+}
+
+// text transform
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+
+// text decoration
+.underline {
+  text-decoration: underline;
+}
+.line-through {
+  text-decoration: line-through;
+}
+.overline {
+  text-decoration: overline;
+}
+
+// text align
+.t-left {
+  text-align: left;
+}
+.t-right {
+  text-align: right;
+}
+.t-center {
+  text-align: center;
+}

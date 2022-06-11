@@ -1,0 +1,136 @@
+// ==============================================
+// Utilities: margin
+// ==============================================
+
+@use "../abstracts/" as *;
+
+// Main Margin
+.m-0 {
+  margin: $m-0;
+}
+.m-0-25rem {
+  margin: $m-0-25rem;
+}
+.m-0-5rem {
+  margin: $m-0-5rem;
+}
+.m-1rem {
+  margin: $m-1rem;
+}
+.m-1-5rem {
+  margin: $m-1-5rem;
+}
+.m-2rem {
+  margin: $m-2rem;
+}
+.m-3rem {
+  margin: $m-3rem;
+}
+.m-4rem {
+  margin: $m-4rem;
+}
+.m-5rem {
+  margin: $m-5rem;
+}
+
+// Vertical Margin
+.m-t-0-25rem {
+  margin-top: $m-0-25rem;
+}
+.m-t-0-5rem {
+  margin-top: $m-0-5rem;
+}
+.m-t-1rem {
+  margin-top: $m-1rem;
+}
+.m-t-1-5rem {
+  margin-top: $m-1-5rem;
+}
+.m-t-2rem {
+  margin-top: $m-2rem;
+}
+.m-t-3rem {
+  margin-top: $m-3rem;
+}
+.m-t-4rem {
+  margin-top: $m-4rem;
+}
+.m-t-5rem {
+  margin-top: $m-5rem;
+}
+
+.m-b-0-25rem {
+  margin-bottom: $m-0-25rem;
+}
+.m-b-0-5rem {
+  margin-bottom: $m-0-5rem;
+}
+.m-b-1rem {
+  margin-bottom: $m-1rem;
+}
+.m-b-1-5rem {
+  margin-bottom: $m-1-5rem;
+}
+.m-b-2rem {
+  margin-bottom: $m-2rem;
+}
+.m-b-3rem {
+  margin-bottom: $m-3rem;
+}
+.m-b-4rem {
+  margin-bottom: $m-4rem;
+}
+.m-b-5rem {
+  margin-bottom: $m-5rem;
+}
+
+// Horizontal Margin
+.m-l-0-25rem {
+  margin-left: $m-0-25rem;
+}
+.m-l-0-5rem {
+  margin-left: $m-0-5rem;
+}
+.m-l-1rem {
+  margin-left: $m-1rem;
+}
+.m-l-1-5rem {
+  margin-left: $m-1-5rem;
+}
+.m-l-2rem {
+  margin-left: $m-2rem;
+}
+.m-l-3rem {
+  margin-left: $m-3rem;
+}
+.m-l-4rem {
+  margin-left: $m-4rem;
+}
+.m-l-5rem {
+  margin-left: $m-5rem;
+}
+
+.m-r-0-25rem {
+  margin-right: $m-0-25rem;
+}
+.m-r-0-5rem {
+  margin-right: $m-0-5rem;
+}
+.m-r-1rem {
+  margin-right: $m-1rem;
+}
+.m-r-1-5rem {
+  margin-right: $m-1-5rem;
+}
+.m-r-2rem {
+  margin-right: $m-2rem;
+}
+.m-r-3rem {
+  margin-right: $m-3rem;
+}
+.m-r-4rem {
+  margin-right: $m-4rem;
+}
+.m-r-5rem {
+  margin-right: $m-5rem;
+}
