@@ -90,6 +90,7 @@ inquirer.prompt(QUESTIONS).then(answers => {
   const COMMANDS = {
     installDeps: `cd ${CURR_DIR}/${appName} && npm install`,
     initGit: `cd ${CURR_DIR}/${appName} && git init -b master && git add .`,
+    gitcrlfFalse: `cd ${CURR_DIR}/${appName} && git config --global core.safecrlf false`,
   };
 
   // 1. log inital message:
@@ -144,7 +145,8 @@ inquirer.prompt(QUESTIONS).then(answers => {
   // 6. initalize git repo:
   console.log();
   const initializedGit = run(COMMANDS.initGit);
-  if (!initializedGit) {
+  const gitConfig = run(COMMANDS.gitcrlfFalse);
+  if (!initializedGit, !gitConfig) {
     console.error(chalk.red('\n! ' + chalk.bold('Failed to initialize git repo.')));
     process.exit(-1);
   }
@@ -193,7 +195,7 @@ function initApp(webicApp, newApp) {
     if (orginalFileStats.isFile()) {
       const orginalFileContents = fs.readFileSync(orginalFilePath, 'utf8');
       // Rename .gitignore file:
-      if (file === '.npmignore') file = '.gitignore';
+      if (file === '.npmignore') file = '.gitignore' || file;
       // write the new file in the new dir:
       const newFilePath = `${CURR_DIR}/${newApp}/${file}`;
       // get the new file contents:
