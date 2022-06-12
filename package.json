@@ -1,7 +1,7 @@
 {
-  "name": "webic-app",
+  "name": "create-webic-app",
   "description": "Create your web app blazingly fast with most lightweight, well organized, and full configurable boilerplate template for building web apps.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "index.js",
   "type": "module",
   "author": "Karim Aboueid",
@@ -12,12 +12,12 @@
   "bin": "./index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KareemAbo3id/create-webic-app"
+    "url": "https://github.com/KareemAbo3id/webic"
   },
   "bugs": {
-    "url": "https://github.com/KareemAbo3id/create-webic-app/issues"
+    "url": "https://github.com/KareemAbo3id/webic/issues"
   },
-  "homepage": "https://github.com/KareemAbo3id/create-webic-app#readme",
+  "homepage": "https://github.com/KareemAbo3id/webic#readme",
   "dependencies": {
     "chalk": "^5.0.1",
     "inquirer": "^8.0.0"
