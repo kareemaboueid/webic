@@ -1,7 +1,6 @@
 # For more info https://help.github.com/articles/ignoring-files
 
 node_modules
-package-lock.json
 /build
 /dev
 .DS_Store

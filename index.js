@@ -188,12 +188,12 @@ inquirer.prompt(QUESTIONS).then(answers => {
 // init the app:
 function initApp(webicApp, newApp) {
   const filesToCreate = fs.readdirSync(webicApp);
-  // create .gitignore file:
-  const gitignoreContent = 'node_modules/\nbuild\ndev/';
-  fs.writeFileSync(`${CURR_DIR}/${newApp}/.gitignore`, gitignoreContent, 'utf8');
+
   filesToCreate.forEach(file => {
     const orginalFilePath = `${webicApp}/${file}`;
     const orginalFileStats = fs.statSync(orginalFilePath);
+    // if gitignore file, rename it:
+    if (file === 'gitignore')  file = '.gitignore';
     // if it's a file, read it, and write it back to the new dir:
     if (orginalFileStats.isFile()) {
       const orginalFileContents = fs.readFileSync(orginalFilePath, 'utf8');
