@@ -19,7 +19,6 @@
 // INITIALIZE MODULES:
 const { src, dest, watch, series, task } = require('gulp');
 const fs = require('fs');
-const os = require('os');
 const chalk = require('chalk');
 const del = require('del');
 const rename = require('gulp-rename');
@@ -36,7 +35,6 @@ const imagemin = require('gulp-imagemin');
 const pachageJson = require('./package.json');
 const browserSync = require('browser-sync');
 const server = browserSync.create();
-const _ = os.platform() === 'win32' || os.platform() === 'win64' ? '\\' : '/';
 
 // SETUP APP PATHS, HELPER FUNCTIONS AND ENVIRONMENT VARIABLE:
 const App = {
@@ -262,7 +260,7 @@ task(
           chalk.yellow(`http://localhost:${App.getPort()}`)
       );
       console.log();
-      console.log('Get started in ' + chalk.yellow(App.src.root) + _ + ' directory.');
+      console.log('Get started in ' + chalk.yellow(App.src.root) + ' directory.');
       console.log();
       console.log(`Note that you're in development mode, your app is not optimized.`);
       console.log('To create a production build, use: ' + chalk.cyan('npm run build'));
