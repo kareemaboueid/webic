@@ -1,15 +1,14 @@
 {
   "name": "create-webic-app",
   "description": "Create your web app blazingly fast with most lightweight, well organized, and full configurable boilerplate template for building web apps.",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "index.js",
   "type": "module",
   "author": "Karim Aboueid",
   "license": "MIT",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "create-webic-app": "./index.js"
   },
-  "bin": "./index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/KareemAbo3id/webic"

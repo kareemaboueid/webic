@@ -8,7 +8,7 @@
 /// LICENSE file in the root directory.
 /// ******************************************
 ///
-/// webic-app
+/// webic
 /// Automating web apps workflow with Gulp.js
 /// @Author: Kareem Aboueid
 /// ******************************************
@@ -16,12 +16,11 @@
 /// This file is complately configurable, feel free to edit it to your needs.
 /// ******************************************
 
-// ------------------------------------
 // INITIALIZE MODULES:
 const { src, dest, watch, series, task } = require('gulp');
 const fs = require('fs');
-const path = require('path');
-const currentPath = path.resolve(__dirname);
+const os = require('os');
+const ccurrentDir = process.cwd();
 const chalk = require('chalk');
 const del = require('del');
 const rename = require('gulp-rename');
@@ -33,60 +32,95 @@ const cssnano = require('cssnano');
 const browserify = require('gulp-browserify');
 const babel = require('gulp-babel');
 const terser = require('gulp-terser');
-var changed = require('gulp-changed');
-var imagemin = require('gulp-imagemin');
+const changed = require('gulp-changed');
+const imagemin = require('gulp-imagemin');
 const pachageJson = require('./package.json');
 const browserSync = require('browser-sync');
 const server = browserSync.create();
+const _ = os.platform() === 'win32' || os.platform() === 'win64' ? '\\' : '/';
 
-// ------------------------------------
-
-// ------------------------------------
 // SETUP APP PATHS, HELPER FUNCTIONS AND ENVIRONMENT VARIABLE:
 const App = {
-  env: 'development',
-  port: 3030,
-  name: pachageJson.name,
-  version: pachageJson.version,
+  name: '',
+  version: '',
+  env: '',
+  port: '',
   src: {
-    root: 'app',
-    html: 'app/*.html',
-    scss: 'app/scss/index.scss',
-    js: 'app/js/index.js',
-    media: 'app/media/**/*',
-    misc: 'app/*.{xml,json,txt}',
+    root: `${ccurrentDir}${_}app`,
+    html: `${ccurrentDir}${_}app${_}*.html`,
+    scss: `${ccurrentDir}${_}app${_}scss${_}index.scss`,
+    js: `${ccurrentDir}${_}app${_}js${_}index.js`,
+    media: `${ccurrentDir}${_}app${_}media${_}**${_}*`,
+    misc: `${ccurrentDir}${_}app${_}*.{xml,txt,json}`,
   },
   dev: {
-    root: 'dev',
-    css: 'dev/css',
-    js: 'dev/js',
-    media: 'dev/media',
+    root: `${ccurrentDir}${_}.dev`,
+    css: `${ccurrentDir}${_}.dev${_}css`,
+    js: `${ccurrentDir}${_}.dev${_}js`,
+    media: `${ccurrentDir}${_}.dev${_}media`,
   },
   dest: {
-    root: 'build/',
-    css: 'build/css/',
-    js: 'build/js/',
-    media: 'build/media/',
+    root: `${ccurrentDir}${_}build`,
+    css: `${ccurrentDir}${_}build${_}css`,
+    js: `${ccurrentDir}${_}build${_}js`,
+    media: `${ccurrentDir}${_}build${_}media`,
+  },
+  // setters
+  setName(name) {
+    return (this.name = name);
+  },
+  setVersion(version) {
+    return (this.version = version);
+  },
+  setEnv(env) {
+    return (this.env = env);
+  },
+  setPort(port) {
+    return (this.port = port);
+  },
+  // getters
+  getName() {
+    return this.name;
+  },
+  getVersion() {
+    return this.version;
+  },
+  getEnv() {
+    return this.env;
+  },
+  getPort() {
+    return this.port;
+  },
+  // checkers
+  isEnv(env) {
+    return this.env === env;
   },
 };
 
-const renameFile = (file, ext) => rename({ basename: file, extname: ext });
+// SET APP CONFIGURATION:
+App.setName(pachageJson.name);
+App.setVersion(pachageJson.version);
+App.setEnv('development');
+App.setPort(8888);
 
+// FUNCTION: RENAME FILES, CLEAR LOG:
+const renameFile = (file, ext) => rename({ basename: file, extname: ext });
+const clearLog = () => process.stdout.write('\x1Bc');
+
+// FUNCTION: ERROR HANDLER:
 const errorHandler = error => {
   console.error('hello Error' + error);
   this.emit('end');
 };
 
-// cheak if `dev` folder exists, if true, delete it:
-if (fs.existsSync(`${currentPath}/${App.dev.root}`)) {
-  fs.rmSync(`${currentPath}/${App.dev.root}`, { recursive: true });
+// FUNCTION: CHECK IF `dev` FOLDER EXISTS:
+if (fs.existsSync(App.dev.root)) {
+  fs.rmSync(App.dev.root, { recursive: true });
 }
-// ------------------------------------
 
-// ------------------------------------
 // ALL TASKS:
 const compileHTML = () => {
-  return App.env === 'development'
+  return App.isEnv('development')
     ? // development:
       src(App.src.html)
         .pipe(htmlmin({ collapseWhitespace: false }))
@@ -98,7 +132,7 @@ const compileHTML = () => {
 };
 
 const compileSCSS = () => {
-  return App.env === 'development'
+  return App.isEnv('development')
     ? // development:
       src(App.src.scss, { sourcemaps: true })
         .pipe(sass({ outputStyle: 'expanded' }))
@@ -121,7 +155,7 @@ const compileSCSS = () => {
 };
 
 const compileJS = () => {
-  return App.env === 'development'
+  return App.isEnv('development')
     ? // development:
       src(App.src.js)
         .pipe(browserify({ debug: false }))
@@ -138,21 +172,18 @@ const compileJS = () => {
 };
 
 const compileMedia = () => {
-  return App.env === 'development'
+  return App.isEnv('development')
     ? // development:
       src(App.src.media)
         .pipe(changed(App.dest.media))
         .on('error', errorHandler)
         .pipe(dest(App.dev.media))
     : // production:
-      src(App.src.media)
-        .pipe(changed(App.dest.media))
-        .pipe(imagemin())
-        .pipe(dest(App.dest.media));
+      src(App.src.media).pipe(changed(App.dest.media)).pipe(imagemin()).pipe(dest(App.dest.media));
 };
 
 const compileMisc = () => {
-  return App.env === 'development'
+  return App.isEnv('development')
     ? // development:
       src(App.src.misc).on('error', errorHandler).pipe(dest(App.dev.root))
     : // production:
@@ -160,33 +191,33 @@ const compileMisc = () => {
 };
 
 const clean = () => {
-  return App.env === 'development' ? del([App.dev.root]) : del([App.dest.root]);
+  return App.isEnv('development') ? del([App.dev.root]) : del([App.dest.root]);
 };
 
+// ACTION: OPEN SERVER:
 const open_server = done => {
   server.init({
     server: { baseDir: App.dev.root },
-    port: App.port,
+    port: App.getPort(),
     open: true,
     notify: false,
   });
   done();
 };
 
+// ACTION: RELOAD SERVER:
 const reload_server = done => {
   server.reload();
   done();
 };
-// ------------------------------------
 
-// ------------------------------------
-// WATCH TASKS:
+// ACTION: WATCH FILES:
 const watch_server = done => {
   watch(
     `${App.src.root}/**/*`,
     series(
       function compiling(cb) {
-        process.stdout.write('\x1Bc');
+        clearLog();
         console.log(chalk.blue(`\nCompiling your app...\n`));
         cb();
       },
@@ -204,14 +235,12 @@ const watch_server = done => {
   );
   done();
 };
-// ------------------------------------
-
-// ------------------------------------
-// TASKS EXECUTION:
 
 // RUN: npm start:
-process.stdout.write('\x1Bc');
-console.log('Starting ' + chalk.yellow(App.name) + ' V' + App.version);
+clearLog();
+console.log('Starting ' + chalk.yellow(App.name));
+console.log(`Version: ${App.getVersion()}`);
+console.log(`Mode: ${App.getEnv()}`);
 console.log();
 task(
   'dev',
@@ -226,9 +255,7 @@ task(
     function done(cb) {
       cb();
       console.log();
-      console.log(
-        chalk.green('Success!') + ' Your code Successfully compiled.'
-      );
+      console.log(chalk.green('Success!') + ' Your code Successfully compiled.');
       console.log();
       console.log(
         'You can view ' +
@@ -237,16 +264,10 @@ task(
           chalk.yellow(`http://localhost:${App.port}/`)
       );
       console.log();
-      console.log(
-        'Get started in ' + chalk.yellow(App.src.root + '/') + ' directory.'
-      );
+      console.log('Get started in ' + chalk.yellow(App.src.root + '/') + ' directory.');
       console.log();
-      console.log(
-        `Note that you're in development mode, your app is not optimized.`
-      );
-      console.log(
-        'To create a production build, use: ' + chalk.cyan('npm run build')
-      );
+      console.log(`Note that you're in development mode, your app is not optimized.`);
+      console.log('To create a production build, use: ' + chalk.cyan('npm run build'));
       console.log();
     }
   )
@@ -257,9 +278,12 @@ task(
   'build',
   series(
     function compiling(cb) {
-      // reassign the env to production:
-      App.env = 'production';
-      console.log(chalk.blue(`\nCompiling your app...\n`));
+      App.setEnv('production');
+      console.log();
+      console.log('Optimizing your app ' + chalk.yellow(App.name));
+      console.log(`Version: ${App.getVersion()}`);
+      console.log(`Mode: ${App.getEnv()}`);
+      console.log();
       cb();
     },
     compileHTML,
@@ -269,8 +293,7 @@ task(
     compileMisc,
     function done(cb) {
       cb();
-      process.stdout.write('\x1Bc');
-
+      clearLog();
       console.log(
         chalk.blue(`\nAll done!`) +
           ' your app ' +
@@ -303,8 +326,7 @@ task(
   'clean-build',
   series(
     function start(cb) {
-      // reassign the env to production:
-      App.env = 'production';
+      App.setEnv('production');
       console.log(chalk.blue(`\nCleaning your production...\n`));
       cb();
     },
@@ -315,4 +337,3 @@ task(
     }
   )
 );
-// ------------------------------------

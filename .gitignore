@@ -2,7 +2,9 @@
 
 node_modules
 /build
+/.dev
 /dev
+/dist
 .DS_Store
 .env.local
 .env.development.local
