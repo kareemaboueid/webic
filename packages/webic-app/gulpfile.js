@@ -20,7 +20,6 @@
 const { src, dest, watch, series, task } = require('gulp');
 const fs = require('fs');
 const os = require('os');
-const ccurrentDir = process.cwd();
 const chalk = require('chalk');
 const del = require('del');
 const rename = require('gulp-rename');
@@ -46,24 +45,24 @@ const App = {
   env: '',
   port: '',
   src: {
-    root: `${ccurrentDir}${_}app`,
-    html: `${ccurrentDir}${_}app${_}*.html`,
-    scss: `${ccurrentDir}${_}app${_}scss${_}index.scss`,
-    js: `${ccurrentDir}${_}app${_}js${_}index.js`,
-    media: `${ccurrentDir}${_}app${_}media${_}**${_}*`,
-    misc: `${ccurrentDir}${_}app${_}*.{xml,txt,json}`,
+    root: `app`,
+    html: `app/*.html`,
+    scss: `app/scss/index.scss`,
+    js: `app/js/index.js`,
+    media: `app/media/**/*`,
+    misc: `app/*.{xml,txt,json}`,
   },
   dev: {
-    root: `${ccurrentDir}${_}.dev`,
-    css: `${ccurrentDir}${_}.dev${_}css`,
-    js: `${ccurrentDir}${_}.dev${_}js`,
-    media: `${ccurrentDir}${_}.dev${_}media`,
+    root: `.dev`,
+    css: `.dev/css`,
+    js: `.dev/js`,
+    media: `.dev/media`,
   },
   dest: {
-    root: `${ccurrentDir}${_}build`,
-    css: `${ccurrentDir}${_}build${_}css`,
-    js: `${ccurrentDir}${_}build${_}js`,
-    media: `${ccurrentDir}${_}build${_}media`,
+    root: `build`,
+    css: `build/css`,
+    js: `build/js`,
+    media: `build/media`,
   },
   // setters
   setName(name) {
@@ -105,7 +104,6 @@ App.setPort(8888);
 
 // FUNCTION: RENAME FILES, CLEAR LOG:
 const renameFile = (file, ext) => rename({ basename: file, extname: ext });
-const clearLog = () => process.stdout.write('\x1Bc');
 
 // FUNCTION: ERROR HANDLER:
 const errorHandler = error => {
@@ -217,7 +215,7 @@ const watch_server = done => {
     `${App.src.root}/**/*`,
     series(
       function compiling(cb) {
-        clearLog();
+        process.stdout.write('\x1Bc');
         console.log(chalk.blue(`\nCompiling your app...\n`));
         cb();
       },
@@ -237,8 +235,8 @@ const watch_server = done => {
 };
 
 // RUN: npm start:
-clearLog();
-console.log('Starting ' + chalk.yellow(App.name));
+process.stdout.write('\x1Bc');
+console.log('Starting ' + chalk.yellow(App.getName()));
 console.log(`Version: ${App.getVersion()}`);
 console.log(`Mode: ${App.getEnv()}`);
 console.log();
@@ -259,12 +257,12 @@ task(
       console.log();
       console.log(
         'You can view ' +
-          chalk.yellow(App.name) +
+          chalk.yellow(App.getName()) +
           ' in your browser: ' +
-          chalk.yellow(`http://localhost:${App.port}/`)
+          chalk.yellow(`http://localhost:${App.getPort()}`)
       );
       console.log();
-      console.log('Get started in ' + chalk.yellow(App.src.root + '/') + ' directory.');
+      console.log('Get started in ' + chalk.yellow(App.src.root) + _ + ' directory.');
       console.log();
       console.log(`Note that you're in development mode, your app is not optimized.`);
       console.log('To create a production build, use: ' + chalk.cyan('npm run build'));
@@ -280,7 +278,7 @@ task(
     function compiling(cb) {
       App.setEnv('production');
       console.log();
-      console.log('Optimizing your app ' + chalk.yellow(App.name));
+      console.log('Optimizing your app ' + chalk.yellow(App.getName()));
       console.log(`Version: ${App.getVersion()}`);
       console.log(`Mode: ${App.getEnv()}`);
       console.log();
@@ -293,11 +291,11 @@ task(
     compileMisc,
     function done(cb) {
       cb();
-      clearLog();
+      process.stdout.write('\x1Bc');
       console.log(
         chalk.blue(`\nAll done!`) +
           ' your app ' +
-          chalk.yellow(App.name + '/') +
+          chalk.yellow(App.getName() + '/') +
           ' Successfully optimized.\n\nYour build folder is ready to be deployed.'
       );
       process.exit();
