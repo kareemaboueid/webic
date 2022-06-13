@@ -18,12 +18,19 @@ import chalk from 'chalk';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 const CURR_DIR = process.cwd();
-import AppPack from './package.json';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const currentNodeVer = cp.execSync('node -v').toString();
 const major = currentNodeVer.split('.')[0];
 const _ = os.platform() === 'win32' || os.platform() === 'win64' ? '\\' : '/';
 const printErr = err => console.log(chalk.red('\n! ' + chalk.bold(err)));
+const webicPackage = JSON.parse(
+  fs.readFileSync(
+    `${__dirname}${_}package.json` ||
+      'https://raw.githubusercontent.com/KareemAbo3id/webic/master/package.json',
+    'utf8'
+  )
+);
+const webicVersion = webicPackage.version;
 
 // command runner:
 const run = command => {
@@ -97,8 +104,7 @@ inquirer.prompt(QUESTIONS).then(answers => {
   // 1. log inital message:
   console.log();
   console.log(
-    `Creating a new Webic version ${AppPack.version} in ` +
-      chalk.yellow(`${CURR_DIR}${_}${appName}`)
+    `Creating a new Webic V${webicVersion} in ` + chalk.yellow(`${CURR_DIR}${_}${appName}`)
   );
 
   // 2. create new app directory:
