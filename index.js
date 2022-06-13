@@ -18,6 +18,7 @@ import chalk from 'chalk';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 const CURR_DIR = process.cwd();
+const AppPack = require('./package.json');
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const currentNodeVer = cp.execSync('node -v').toString();
 const major = currentNodeVer.split('.')[0];
@@ -95,7 +96,10 @@ inquirer.prompt(QUESTIONS).then(answers => {
 
   // 1. log inital message:
   console.log();
-  console.log('Creating a new Webic app in ' + chalk.yellow(`${CURR_DIR}${_}${appName}`));
+  console.log(
+    `Creating a new Webic version ${AppPack.version} in ` +
+      chalk.yellow(`${CURR_DIR}${_}${appName}`)
+  );
 
   // 2. create new app directory:
   if (fs.existsSync(`${CURR_DIR}${_}${appName}`)) {
@@ -155,7 +159,7 @@ inquirer.prompt(QUESTIONS).then(answers => {
   console.log(
     chalk.green('Success!') +
       ' Created ' +
-      chalk.yellow.bold(appName) +
+      chalk.yellow(appName) +
       ' in: ' +
       chalk.yellow(`${CURR_DIR}${_}${appName}`)
   );
@@ -174,11 +178,11 @@ inquirer.prompt(QUESTIONS).then(answers => {
   console.log(chalk.cyan('npm run clean:build'));
   console.log('   Removes the production build.');
   console.log();
-  console.log(`Get started by editing ${chalk.yellow(appName + '/app')} by running:`);
+  console.log(`Get started by editing ${chalk.yellow(appName + `${_}app`)} by running:`);
   console.log(chalk.cyan('   cd ') + `${appName}`);
   console.log(chalk.cyan('   npm start'));
   console.log();
-  console.log(`Lo-Fi Radio: ${chalk.yellow('https://www.lofi.cafe/')}`);
+  console.log(`Lo-Fi Radio: ${chalk.yellow('https://www.lofi.cafe')}`);
   console.log();
   console.log("Let's build stuff!");
 });
