@@ -18,7 +18,7 @@ import chalk from 'chalk';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 const CURR_DIR = process.cwd();
-const AppPack = require('./package.json');
+import AppPack from './package.json';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const currentNodeVer = cp.execSync('node -v').toString();
 const major = currentNodeVer.split('.')[0];
