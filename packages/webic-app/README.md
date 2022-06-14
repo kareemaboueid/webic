@@ -1,3 +1,3 @@
-# foo-app
+# webic-app
 
-my awesome app
+webic-description

@@ -94,6 +94,7 @@ inquirer.prompt(QUESTIONS).then(answers => {
   const webicApp = `${__dirname}${_}packages${_}webic-app`;
   const webicPackage = `${CURR_DIR}${_}${appName}${_}package.json`;
   const webicManifest = `${CURR_DIR}${_}${appName}${_}app${_}manifest.json`;
+  const webicPage = `${CURR_DIR}${_}${appName}${_}app${_}index.html`;
   const webicReadme = `${CURR_DIR}${_}${appName}${_}README.md`;
   const COMMANDS = {
     installDeps: `cd ${CURR_DIR}${_}${appName} && npm install`,
@@ -128,6 +129,8 @@ inquirer.prompt(QUESTIONS).then(answers => {
   const packageJSON = JSON.parse(fs.readFileSync(webicPackage, 'utf8'));
   const manifestJSON = JSON.parse(fs.readFileSync(webicManifest, 'utf8'));
   const readmeMD = fs.readFileSync(webicReadme, 'utf8');
+  const indexHTML = fs.readFileSync(webicPage, 'utf8');
+  const index = indexHTML.replace(/<title>.*<\/title>/g, `<title>${appName}</title>`);
   const readme = readmeMD
     .replace(/# webic-app/g, `# ${appName}`)
     .replace(/webic-description/g, appDescription);
@@ -138,6 +141,7 @@ inquirer.prompt(QUESTIONS).then(answers => {
   fs.writeFileSync(webicPackage, JSON.stringify(packageJSON, null, 2), 'utf8');
   fs.writeFileSync(webicManifest, JSON.stringify(manifestJSON, null, 2), 'utf8');
   fs.writeFileSync(webicReadme, readme, 'utf8');
+  fs.writeFileSync(webicPage, index, 'utf8');
 
   // 5. install dependencies:
   console.log();
