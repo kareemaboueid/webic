@@ -98,7 +98,7 @@ inquirer.prompt(QUESTIONS).then(answers => {
   const webicReadme = `${CURR_DIR}${_}${appName}${_}README.md`;
   const COMMANDS = {
     installDeps: `cd ${CURR_DIR}${_}${appName} && npm install`,
-    initGit: `cd ${CURR_DIR}${_}${appName} && git init -b master && git add .`,
+    initGit: `cd ${CURR_DIR}${_}${appName} && git init -b master && git add --all && git commit -m "initial commit"`,
     disableCRLF: `cd ${CURR_DIR}${_}${appName} && git config --global core.safecrlf false`,
   };
 
