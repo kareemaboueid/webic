@@ -33,11 +33,11 @@ const webicPackage = JSON.parse(
 const webicVersion = webicPackage.version;
 
 // command runner:
-const run = command => {
+const run = (command, std1, std2, std3) => {
   try {
-    cp.execSync(command, { stdio: ['ignore', 'inherit', 'inherit'] });
+    cp.execSync(command, { stdio: [std1, std2, std3] });
   } catch (e) {
-    console.error(`Failed to execute ${command}`, e.message);
+    printErr(`Failed to execute ${command}`, e.message);
     return false;
   }
   return true;
@@ -146,7 +146,7 @@ inquirer.prompt(QUESTIONS).then(answers => {
   // 5. install dependencies:
   console.log();
   console.log('Installing packages. This might take a couple of minutes...');
-  const installedDeps = run(COMMANDS.installDeps);
+  const installedDeps = run(COMMANDS.installDeps, 'ignore', 'inherit', 'inherit');
   if (!installedDeps) {
     console.error(chalk.red('\n! ' + chalk.bold('Failed to install the dependencies.')));
     process.exit(-1);
@@ -156,8 +156,8 @@ inquirer.prompt(QUESTIONS).then(answers => {
 
   // 6. initalize git repo:
   console.log();
-  const initializedGit = run(COMMANDS.initGit);
-  const gitConfig = run(COMMANDS.disableCRLF);
+  const initializedGit = run(COMMANDS.initGit, 'ignore', 'ignore', 'inherit');
+  const gitConfig = run(COMMANDS.disableCRLF, 'ignore', 'ignore', 'inherit');
   if ((!initializedGit, !gitConfig)) {
     console.error(chalk.red('\n! ' + chalk.bold('Failed to initialize git repo.')));
     process.exit(-1);
@@ -192,9 +192,8 @@ inquirer.prompt(QUESTIONS).then(answers => {
   console.log(chalk.cyan('   cd ') + `${appName}`);
   console.log(chalk.cyan('   npm start'));
   console.log();
-  console.log(`Lo-Fi Radio: ${chalk.yellow('https://www.lofi.cafe')}`);
+  console.log('Happy coding!');
   console.log();
-  console.log("Let's build stuff!");
 });
 
 // init the app:
