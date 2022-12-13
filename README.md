@@ -1,7 +1,7 @@
 # Webic
 
 <p>
-Create your web app <strong>blazingly fast</strong> with most lightweight, well organized, and full configurable boilerplate template for building web apps.
+Create your app <strong>blazingly fast</strong> with most lightweight, and configurable boilerplate template.
 </p>
 
 ## Quick start
