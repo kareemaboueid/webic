@@ -1,8 +1,6 @@
 # Webic
 
-<p>
-Create your app <strong>blazingly fast</strong> with most lightweight, and configurable boilerplate template.
-</p>
+Create your front-end app with most lightweight and simple configuration, using modern tools and best practices.
 
 ## Quick start
 
@@ -11,11 +9,17 @@ Be sure to have [Node.js](https://nodejs.org/) installed before proceeding.
 
 Use the create-webic-app script, instantly fetch the latest npm published package:
 
-```shell
+```bash
 npx create-webic-app
 ```
 
-Then, answer the questions:
+Or
+
+```bash
+npm init webic-app
+```
+
+Then, follow the prompts to set up your app:
 
 ```shell
 ? App name: # foo-app
@@ -27,41 +31,48 @@ that's it! Webic will set it up for you, and you're done.
 ## Features
 
 - ### Robust base
+
 Built on top of most crucially organized SASS partials, to ensure all basic styles are set, clean, scalable and easily maintainable.
 
-
 - ### Modules based
+
 Require any module you want, the `index.js` file will be bundling up and works in the browser perfectly.
 
 - ### Automated Workflow
+
 Includes `gulpfile` configurations to initialize a development environment that automates your workflow, debugging, starting a local server.
 
 - ### Environment scripts
+
 Start your app right away, with series of npm scripts that can perform all tasks in a single action, easily and quickly.
 
 ## Scripts
 
-Inside the newly created app, you can run the following built-in commands:
+Inside your app directory, you can run:
 
 ### ` npm start `
+
 Starts the development server.
 
 ### ` npm run build `
+
 Optmizes and bundles the app for production.
 
 ### ` npm run clean:dev `
+
 Removes the development environment.
 
 ### ` npm run clean:build `
-Removes the production build.
 
+Removes the production build.
 
 ## What's included
 
 ### Basic structure
+
 A basic webic initial starter structure looks like this:
 
-```
+```txt
 ├── app/
 │   ├── js/
 │   ├── media/
@@ -76,6 +87,7 @@ A basic webic initial starter structure looks like this:
 ├── package.json
 ├── README.md
 ```
+
 ### Files
 
 - `app/index.html`: The main HTML file of your app.
@@ -88,7 +100,7 @@ A basic webic initial starter structure looks like this:
 
 - `scss/` contains SCSS base styles and all functions and mixins.
 
--  `js/` contains all app scripts, with cabablity to use `require()`.
+- `js/` contains all app scripts, with cabablity to use `require()`.
 
 ## SCSS
 
@@ -99,10 +111,13 @@ Webic uses [Dart Sass](https://sass-lang.com/dart-sass) new modules rules: `@use
 - The `@forward` loads a Sass stylesheet and makes its mixins, functions, and variables available when your stylesheet is loaded in other Sass stylesheets. [more](https://sass-lang.com/documentation/at-rules/forward)
 
 More about [sass module system](https://css-tricks.com/introducing-sass-modules/)
-### For reset style:
+
+### For reset style
+
 webic uses necolas's [Normalize.css](https://necolas.github.io/normalize.css/) in order to make browsers render all elements more consistently and in line with modern standards.
 
-### Media queries:
+### Media queries
+
 webic uses Akram Khalid's sass-mediaqueries [SCSS breakpoints library](https://github.com/wrongakram/sass-mediaqueries/blob/master/src/breakpoints/breakpoints.scss).
 
 example:
@@ -119,17 +134,18 @@ example:
 
 Webic uses [Babel](https://babeljs.io/) to transpile ES6 code to make it compatible with older browsers.
 
-Webic uses [browserify]( https://browserify.org/) to bundle all scripts together, by using ` require()` to load dependencies in `index.js`, which the browser will execute.
+Webic uses [browserify]( https://browserify.org/) to bundle all scripts together, by using `require()` to load dependencies in `index.js`, which the browser will execute.
 
 ## License
 
-Webic is open source project. [licensed as MIT](https://github.com/KareemAbo3id/webic/blob/master/LICENSE).
+Webic is open source project. [licensed as MIT](https://github.com/kareemaboueid/webic/blob/master/LICENSE).
 
-## Credits
+## Inspiration
+
 - Thanks to [Nicolas Gallagher](https://github.com/necolas/) for [Normalize.css](https://github.com/necolas/normalize.css).
 - Thanks to [Akram Khalid](http://github.com/wrongakram) for [sass-mediaqueries](http://github.com/wrongakram/sass-mediaqueries/blob/master/src/breakpoints/breakpoints.scss).
 - Thanks to [Kitty Giraudel](https://github.com/KittyGiraudel) for [Sass Guidelines](https://sass-guidelin.es/).
 
 ## Copyright
-&copy; Built by [Kareem Aboueid](https://github.com/KareemAbo3id) - 2022.
 
+&copy; Built by [Kareem Aboueid](https://github.com/kareemaboueid) - 2022.
