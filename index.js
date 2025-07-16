@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /// ******************************************
-/// Copyright (c) 2022-present, Webic, @KareemAbo3id
+/// Copyright (c) 2022-present, Webic, @kareemaboueid
 /// ******************************************
 ///
 /// This source code is licensed under the MIT license found in the
