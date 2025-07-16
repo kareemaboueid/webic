@@ -1,7 +1,7 @@
 {
   "name": "create-webic-app",
   "description": "Create your web app blazingly fast with most lightweight, well organized, and full configurable boilerplate template for building web apps.",
-  "version": "1.0.17",
+  "version": "2.0.0",
   "main": "index.js",
   "type": "module",
   "author": "Karim Aboueid",
@@ -18,17 +18,17 @@
   },
   "homepage": "https://github.com/kareemaboueid/webic#readme",
   "dependencies": {
-    "chalk": "^5.0.1",
-    "inquirer": "^8.0.0"
+    "chalk": "^5.4.1",
+    "inquirer": "^12.7.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "eslint": "^7.22.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "^2.2.1"
+    "@babel/core": "^7.28.0",
+    "eslint": "^9.31.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.1",
+    "prettier": "^3.6.2"
   },
   "publishConfig": {
     "access": "public"
