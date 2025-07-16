@@ -26,7 +26,7 @@ const printErr = err => console.log(chalk.red('\n! ' + chalk.bold(err)));
 const webicPackage = JSON.parse(
   fs.readFileSync(
     `${__dirname}${_}package.json` ||
-      'https://raw.githubusercontent.com/KareemAbo3id/webic/master/package.json',
+      'https://raw.githubusercontent.com/kareemaboueid/webic/master/package.json',
     'utf8'
   )
 );
