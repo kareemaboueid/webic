@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/KareemAbo3id/webic"
+    "url": "https://github.com/kareemaboueid/webic"
   },
   "bugs": {
-    "url": "https://github.com/KareemAbo3id/webic/issues"
+    "url": "https://github.com/kareemaboueid/webic/issues"
   },
-  "homepage": "https://github.com/KareemAbo3id/webic#readme",
+  "homepage": "https://github.com/kareemaboueid/webic#readme",
   "dependencies": {
     "chalk": "^5.0.1",
     "inquirer": "^8.0.0"
